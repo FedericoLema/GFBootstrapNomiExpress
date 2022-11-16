@@ -1,0 +1,28 @@
+{% extends 'base.html'%}  {# Herencia #}
+{% block title %}Configuracion{% endblock %}
+  
+ {% block cuerpo %}
+   <body>
+    <h1>Registro detalles</h1>
+    <form action="{{ url_for('frm_detalles.frm_detalles_act', operacion=operacion) }}" method="POST" {{valida}}>
+     <table class="table table-hover mb-0"> 
+       <tr><th align = 'right'>Tipo:</td><td><input type='text' id=tipo name=tipo size=15 maxlenght=5 value='{{reg.tipo}}' {{bloquea_claves}} requried></td></tr>
+       <tr><th align = 'right'>Nro:</td><td><input type='text' id=nro name=nro size=30 maxlenght=20 value='{{reg.nro}}' {{bloquea_claves}} requried></td></tr>
+       <tr><th align = 'right'>Secuencia:</td><td><input type='number' step='1' min=0 max='9999999990' id=secuencia name=secuencia size=30 maxlenght=20 value='{{reg.secuencia}}' {{bloquea_claves}} requried></td></tr>
+       <tr><th align = 'right'>Id produc:</td><td><input type='text' id=id_producto name=id_producto size=30 maxlenght=20 value='{{reg.id_producto}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Precio:</td><td><input type='number' step='.01' min='-9999999000' max='9999999000' id=precio name=precio size=23 maxlenght=13 value='{{reg.precio}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Cantidad:</td><td><input type='number' step='.01' min='-9999990000' max='9999990000' id=cantidad name=cantidad size=23 maxlenght=13 value='{{reg.cantidad}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Descuento:</td><td><input type='number' step='.01' min='-9999900000' max='9999900000' id=descuento name=descuento size=23 maxlenght=13 value='{{reg.descuento}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Costo:</td><td><input type='number' step='.01' min='-9999000000' max='9999000000' id=costo name=costo size=23 maxlenght=13 value='{{reg.costo}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Rete ica:</td><td><input type='number' step='.01' min='-9990000000' max='9990000000' id=rete_ica name=rete_ica size=23 maxlenght=13 value='{{reg.rete_ica}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Rete iva:</td><td><input type='number' step='.01' min='-9900000000' max='9900000000' id=rete_iva name=rete_iva size=23 maxlenght=13 value='{{reg.rete_iva}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Rete fuen:</td><td><input type='number' step='.01' min='-9000000000' max='9000000000' id=rete_fuente name=rete_fuente size=23 maxlenght=13 value='{{reg.rete_fuente}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Iva:</td><td><input type='number' step='.01' min='0' max='0' id=iva name=iva size=23 maxlenght=13 value='{{reg.iva}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Descripci:</td><td><input type='text' id=descripcion_producto name=descripcion_producto size=110 maxlenght=100 value='{{reg.descripcion_producto}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Cantidad :</td><td><input type='number' step='.01' min='0' max='0' id=cantidad_pedida name=cantidad_pedida size=23 maxlenght=13 value='{{reg.cantidad_pedida}}' {{bloquea_campos}}></td></tr>
+    </table>
+    <input type="submit" name="boton" value="{{operacion}}"/>
+    </form>
+   </body>
+ {% endblock %}
+</html>

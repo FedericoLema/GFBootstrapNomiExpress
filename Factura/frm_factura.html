@@ -1,0 +1,34 @@
+{% extends 'base.html'%}  {# Herencia #}
+{% block title %}Configuracion{% endblock %}
+  
+ {% block cuerpo %}
+   <body>
+    <h1>Registro documentos</h1>
+    <form action="{{ url_for('frm_documentos.frm_documentos_act', operacion=operacion) }}" method="POST" {{valida}}>
+     <table class="table table-hover mb-0"> 
+       <tr><th align = 'right'>Tipo:</td><td><input type='text' id=tipo name=tipo size=15 maxlenght=5 value='{{reg.tipo}}' {{bloquea_claves}} requried></td></tr>
+       <tr><th align = 'right'>Nro:</td><td><input type='text' id=nro name=nro size=30 maxlenght=20 value='{{reg.nro}}' {{bloquea_claves}} requried></td></tr>
+       <tr><th align = 'right'>Id bodega:</td><td><input type='text' id=id_bodega name=id_bodega size=15 maxlenght=5 value='{{reg.id_bodega}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Fecha:</td><td><input type='date' id=fecha name=fecha size=18 maxlenght=8 value='{{reg.fecha}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Vence:</td><td><input type='date' id=vence name=vence size=18 maxlenght=8 value='{{reg.vence}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Procesado:</td><td><input type='text' id=procesado name=procesado size=18 maxlenght=8 value='{{reg.procesado}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Id cliente:</td><td><input type='text' id=id_cliente name=id_cliente size=30 maxlenght=20 value='{{reg.id_cliente}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Id vendedor:</td><td><input type='text' id=id_vendedor name=id_vendedor size=30 maxlenght=20 value='{{reg.id_vendedor}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Valor docum:</td><td><input type='number' step='.01' min='-9990000000' max='9990000000' id=valor_documento name=valor_documento size=23 maxlenght=13 value='{{reg.valor_documento}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Saldo:</td><td><input type='number' step='.01' min='-9900000000' max='9900000000' id=saldo name=saldo size=23 maxlenght=13 value='{{reg.saldo}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Descuento:</td><td><input type='number' step='.01' min='-9000000000' max='9000000000' id=descuento name=descuento size=23 maxlenght=13 value='{{reg.descuento}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Rete iva:</td><td><input type='number' step='.01' min='0' max='0' id=rete_iva name=rete_iva size=23 maxlenght=13 value='{{reg.rete_iva}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Rete ica:</td><td><input type='number' step='.01' min='0' max='0' id=rete_ica name=rete_ica size=23 maxlenght=13 value='{{reg.rete_ica}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Rete fuente:</td><td><input type='number' step='.01' min='0' max='0' id=rete_fuente name=rete_fuente size=23 maxlenght=13 value='{{reg.rete_fuente}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Id canal:</td><td><input type='text' id=id_canal name=id_canal size=15 maxlenght=5 value='{{reg.id_canal}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Nro documen:</td><td><input type='text' id=nro_documento_canal name=nro_documento_canal size=60 maxlenght=50 value='{{reg.nro_documento_canal}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Condicion p:</td><td><input type='text' id=condicion_pago name=condicion_pago size=15 maxlenght=5 value='{{reg.condicion_pago}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Observacion:</td><td><input type='text' id=observaciones name=observaciones size=110 maxlenght=100 value='{{reg.observaciones}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Estado fe:</td><td><input type='text' id=estado_fe name=estado_fe size=30 maxlenght=20 value='{{reg.estado_fe}}' {{bloquea_campos}}></td></tr>
+       <tr><th align = 'right'>Estado desp:</td><td><input type='text' id=estado_despacho name=estado_despacho size=30 maxlenght=20 value='{{reg.estado_despacho}}' {{bloquea_campos}}></td></tr>
+    </table>
+    <input type="submit" name="boton" value="{{operacion}}"/>
+    </form>
+   </body>
+ {% endblock %}
+</html>

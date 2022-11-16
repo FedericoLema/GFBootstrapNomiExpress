@@ -1,0 +1,54 @@
+{% extends 'base.html'%}  {# Herencia #}
+
+{% block title %}Configuracion{% endblock %}
+
+  
+{% block cuerpo %}
+  <body>
+       <div id="main-area">
+           <div id="main-content">        
+               <form action="{{ url_for('frm_@TABLA.frm_@TABLA_act', operacion=operacion) }}" method="POST" {{valida}}>
+                    <!-- <input type="hidden" name="_ip_csrf" value="187dae7f0d0a49064bbba3a9e2786f49"> -->
+                    <div id="headerbar">
+                        <h1 class="headerbar-title">Formulario de @NOMBRE</h1>
+                        <div class="headerbar-item pull-right">
+                            <div class="btn-group btn-group-sm">
+                               <button id="btn-submit" name="btn_submit" class="btn btn-success ajax-loader" value="1">
+                                       <i class="fa fa-check"></i> {{operacion}}
+                               </button>
+                               <button id="btn-cancel" type="button" name="btn_cancel" class="btn btn-danger" onclick="salir()" value="1">
+                                       <i class="fa fa-times"></i> Cancelar
+                               </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content">        
+                        <!-- <input class="hidden" name="is_update" type="hidden" value="1"> -->
+                       <div class="row">
+                           <div class="col-xs-12 col-sm-6">
+                               <div class="panel panel-default">
+                                  <div class="panel-heading form-inline clearfix">
+                                      Información @NOMBRE
+                                  </div>
+                                  <div class="panel-body">
+                                       @DETALLE     
+                                  </div>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+               </form>
+           </div>
+       </div>
+     <script>
+         function salir(){
+             if (confirm("Esta seguro de abonadar esta pagina?")){
+                 location.href = "{{url_for('frm_@TABLA.frm_@TABLA_primero')}}"
+             } else {
+                 return;
+             }
+         }
+     </script>
+  </body>
+{% endblock %}
+</html>

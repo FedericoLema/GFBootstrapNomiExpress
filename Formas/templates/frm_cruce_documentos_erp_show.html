@@ -1,0 +1,104 @@
+{% extends 'base.html'%}  {# Herencia #}
+{% block title %}Configuracion{% endblock %}
+  
+{% block cuerpo %}
+  <body>
+       <div id="main-area">
+           <div id="main-content">        
+               <form action="{{ url_for('frm_cruce_documentos_erp.frm_cruce_documentos_erp_act', operacion=operacion) }}" method="POST" {{valida}}>
+                    <!-- <input type="hidden" name="_ip_csrf" value="187dae7f0d0a49064bbba3a9e2786f49"> -->
+                    <div id="headerbar">
+                        <h1 class="headerbar-title">Formulario de cruce documentos erp</h1>
+                        <div class="headerbar-item pull-right">
+                            <div class="btn-group btn-group-sm">
+                               <button id="btn-submit" name="btn_submit" class="btn btn-success ajax-loader" value="1">
+                                       <i class="fa fa-check"></i> {{operacion}}
+                               </button>
+                               <button id="btn-cancel" type="button" name="btn_cancel" class="btn btn-danger" onclick="salir()" value="1">
+                                       <i class="fa fa-times"></i> Cancelar
+                               </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content">        
+                        <!-- <input class="hidden" name="is_update" type="hidden" value="1"> -->
+                       <div class="row">
+                           <div class="col-xs-12 col-sm-6">
+                               <div class="panel panel-default">
+                                  <div class="panel-heading form-inline clearfix">
+                                      Información cruce documentos erp
+                                  </div>
+                                  <div class="panel-body">
+                                       <div Class='form-group'>
+                                          <label for='id_empresa'>Id empresa</label>
+                                          <input type='number' step='1' min=0 max='' class=form-control id=id_empresa name=id_empresa size=10 maxlenght=0 value='{{reg.id_empresa}}' required readonly>
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='id'>Id</label>
+                                          <input type='number' step='1' min=0 max='' class=form-control id=id name=id size=10 maxlenght=0 value='{{reg.id}}' {{bloquea_claves}} required>
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='tipo_cr'>Tipo cr</label>
+                                          <input type='text' class=form-control id=tipo_cr name=tipo_cr size=15 maxlenght=5 value='{{reg.tipo_cr}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='id_cr'>Id cr</label>
+                                          <input type='number' step='1' min=0 max='' class=form-control id=id_cr name=id_cr size=15 maxlenght=5 value='{{reg.id_cr}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='tipo_db'>Tipo db</label>
+                                          <input type='text' class=form-control id=tipo_db name=tipo_db size=15 maxlenght=5 value='{{reg.tipo_db}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='id_db'>Id db</label>
+                                          <input type='number' step='1' min=0 max='' class=form-control id=id_db name=id_db size=15 maxlenght=5 value='{{reg.id_db}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='fecha'>Fecha</label>
+                                          <input type='date' class=form-control id=fecha name=fecha size=18 maxlenght=8 value='{{reg.fecha}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='valor'>Valor</label>
+                                          <input type='number' step='0.01' min='0' max='9999999999999.99' class=form-control id=valor name=valor size=25 maxlenght=15 value='{{reg.valor}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='retencion'>Retencion</label>
+                                          <input type='number' step='0.01' min='0' max='9999999999999.99' class=form-control id=retencion name=retencion size=25 maxlenght=15 value='{{reg.retencion}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='rete_iva'>Rete iva</label>
+                                          <input type='number' step='0.01' min='0' max='9999999999999.99' class=form-control id=rete_iva name=rete_iva size=25 maxlenght=15 value='{{reg.rete_iva}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='rete_ica'>Rete ica</label>
+                                          <input type='number' step='0.01' min='0' max='9999999999999.99' class=form-control id=rete_ica name=rete_ica size=25 maxlenght=15 value='{{reg.rete_ica}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='ajuste'>Ajuste</label>
+                                          <input type='number' step='0.01' min='0' max='9999999999999.99' class=form-control id=ajuste name=ajuste size=25 maxlenght=15 value='{{reg.ajuste}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='observaciones'>Observaciones</label>
+                                          <input type='text' class=form-control id=observaciones name=observaciones size=110 maxlenght=100 value='{{reg.observaciones}}' {{bloquea_campos}} >
+                                           </div>
+                                           </div>
+                                  </div>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+               </form>
+           </div>
+       </div>
+     <script>
+         function salir(){
+             if (confirm("Esta seguro de abonadar esta pagina?")){
+                 location.href = "{{url_for('frm_cruce_documentos_erp.frm_cruce_documentos_erp_primero')}}"
+             } else {
+                 return;
+             }
+         }
+     </script>
+  </body>
+{% endblock %}
+</html>

@@ -1,0 +1,8 @@
+"Campo","Clave","Tipo","Tamaño","Valida","Tabla Combo","Clave combo","Campo muestra Combo","Formato","Enteros","Decimales",
+"ano","PRI","decimal","5","","","","","###0","4","0",
+"riesgo1","","decimal","9","","","","","##,##0.000","5","3",
+"riesgo2","","double","9","","","","","###,###,###,##0.########","5","3",
+"riesgo3","","decimal","9","","","","","##,##0.000","5","3",
+"riesgo4","","decimal","9","","","","","##,##0.000","5","3",
+"riesgo5","","decimal","9","","","","","##,##0.000","5","3",
+"vigente","","date","8","","","","","yyyy-MM-dd","","",

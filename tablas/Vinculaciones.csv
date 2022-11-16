@@ -1,0 +1,18 @@
+vinculaciones,278,id_fondo_pensiones,,varchar,10,,,,,,,,,Id fondo pensiones,Id fondo pensiones,0,
+vinculaciones,279,id_fondo_cesantias,,varchar,10,,,,,,,,,Id fondo cesantias,Id fondo cesantias,0,
+vinculaciones,280,id_eps,,varchar,10,,,,,,,,,Id eps,Id eps,0,
+vinculaciones,281,id_arl,,varchar,10,,,,,,,,,Id arl,Id arl,0,
+vinculaciones,282,id_categoria_arl,,varchar,2,,,,,,,,,Id categoria arl,Id categoria arl,0,
+vinculaciones,283,id_caja_compensacion,,varchar,10,,,,,,,,,Id caja compensacion,Id caja compensacion,0,
+vinculaciones,284,id_tipo_cuenta,,varchar,2,,,,,,,,,Id tipo cuenta,Id tipo cuenta,0,
+vinculaciones,285,cuenta_bancaria,,varchar,20,,,,,,,,,Cuenta bancaria,Cuenta bancaria,0,
+vinculaciones,286,id_banco,,decimal,12,,,,,"#,###,###,###,##0",11,0,,Id banco,Id banco,0,1.00E+13
+vinculaciones,287,dependientes,,tinyint,12,,,,,"#,###,###,###,##0",3,0,,Dependientes,Dependientes,0,
+vinculaciones,288,pension_voluntaria,,decimal,12,,,,,"#,###,###,###,##0.00",9,2,,Pension voluntaria,Pension voluntaria,0,1.00E+13
+vinculaciones,289,aporte_AFC,,decimal,12,,,,,"#,###,###,###,##0.00",9,2,,Aporte AFC,Aporte AFC,0,1.00E+13
+vinculaciones,290,salud_prepagada,,decimal,12,,,,,"#,###,###,###,##0.00",9,2,,Salud prepagada,Salud prepagada,0,1.00E+13
+vinculaciones,291,intereses_vivienda,,decimal,12,,,,,"#,###,###,###,##0.00",9,2,,Intereses vivienda,Intereses vivienda,0,1.00E+13
+vinculaciones,292,id_proceso_rf,,varchar,2,,,,,,,,,Id proceso rf,Id proceso rf,0,
+vinculaciones,293,tasa_proceso_2,,decimal,8,,,,,"##,##0.00",5,2,,Tasa proceso 2,Tasa proceso 2,0,99999.99
+vinculaciones,294,retiro,,date,8,,,,,yyyy-MM-dd,,,,Retiro,Retiro,0,
+vinculaciones,295,id_motivo_retiro,,varchar,5,,,,,,,,,Id motivo retiro,Id motivo retiro,0,

@@ -1,0 +1,100 @@
+{% extends 'base.html'%}  {# Herencia #}
+{% block title %}Configuracion{% endblock %}
+  
+{% block cuerpo %}
+  <body>
+       <div id="main-area">
+           <div id="main-content">        
+               <form action="{{ url_for('frm_movimiento_erp.frm_movimiento_erp_act', operacion=operacion) }}" method="POST" {{valida}}>
+                    <!-- <input type="hidden" name="_ip_csrf" value="187dae7f0d0a49064bbba3a9e2786f49"> -->
+                    <div id="headerbar">
+                        <h1 class="headerbar-title">Formulario de movimiento erp</h1>
+                        <div class="headerbar-item pull-right">
+                            <div class="btn-group btn-group-sm">
+                               <button id="btn-submit" name="btn_submit" class="btn btn-success ajax-loader" value="1">
+                                       <i class="fa fa-check"></i> {{operacion}}
+                               </button>
+                               <button id="btn-cancel" type="button" name="btn_cancel" class="btn btn-danger" onclick="salir()" value="1">
+                                       <i class="fa fa-times"></i> Cancelar
+                               </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content">        
+                        <!-- <input class="hidden" name="is_update" type="hidden" value="1"> -->
+                       <div class="row">
+                           <div class="col-xs-12 col-sm-6">
+                               <div class="panel panel-default">
+                                  <div class="panel-heading form-inline clearfix">
+                                      Información movimiento erp
+                                  </div>
+                                  <div class="panel-body">
+                                       <div Class='form-group'>
+                                          <label for='id_empresa'>Id empresa</label>
+                                          <input type='number' step='1' min=0 max='' class=form-control id=id_empresa name=id_empresa size=10 maxlenght=0 value='{{reg.id_empresa}}' required readonly>
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='tipo'>Tipo</label>
+                                          <input type='text' class=form-control id=tipo name=tipo size=15 maxlenght=5 value='{{reg.tipo}}' {{bloquea_claves}} required>
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='id'>Id</label>
+                                          <input type='number' step='1' min=0 max='' class=form-control id=id name=id size=15 maxlenght=5 value='{{reg.id}}' {{bloquea_claves}} required>
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='consecutivo'>Consecutivo</label>
+                                          <input type='number' step='1' min=0 max='' class=form-control id=consecutivo name=consecutivo size=15 maxlenght=5 value='{{reg.consecutivo}}' {{bloquea_claves}} required>
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='id_bodega'>Id bodega</label>
+                                          <input type='text' class=form-control id=id_bodega name=id_bodega size=15 maxlenght=5 value='{{reg.id_bodega}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='id_producto'>Id producto</label>
+                                          <input type='text' class=form-control id=id_producto name=id_producto size=30 maxlenght=20 value='{{reg.id_producto}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='precio'>Precio</label>
+                                          <input type='number' step='0.01' min='0' max='9999999999999.99' class=form-control id=precio name=precio size=25 maxlenght=15 value='{{reg.precio}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='costo'>Costo</label>
+                                          <input type='number' step='0.01' min='0' max='9999999999999.99' class=form-control id=costo name=costo size=25 maxlenght=15 value='{{reg.costo}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='cantidad'>Cantidad</label>
+                                          <input type='number' step='0.01' min='0' max='9999999999999.99' class=form-control id=cantidad name=cantidad size=25 maxlenght=15 value='{{reg.cantidad}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='iva'>Iva</label>
+                                          <input type='number' step='0.01' min='0' max='9999999999999.99' class=form-control id=iva name=iva size=25 maxlenght=15 value='{{reg.iva}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='retencion'>Retencion</label>
+                                          <input type='number' step='0.01' min='0' max='9999999999999.99' class=form-control id=retencion name=retencion size=25 maxlenght=15 value='{{reg.retencion}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='observaciones'>Observaciones</label>
+                                          <input type='text' class=form-control id=observaciones name=observaciones size=110 maxlenght=100 value='{{reg.observaciones}}' {{bloquea_campos}} >
+                                           </div>
+                                           </div>
+                                  </div>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+               </form>
+           </div>
+       </div>
+     <script>
+         function salir(){
+             if (confirm("Esta seguro de abonadar esta pagina?")){
+                 location.href = "{{url_for('frm_movimiento_erp.frm_movimiento_erp_primero')}}"
+             } else {
+                 return;
+             }
+         }
+     </script>
+  </body>
+{% endblock %}
+</html>

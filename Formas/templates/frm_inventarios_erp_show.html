@@ -1,0 +1,88 @@
+{% extends 'base.html'%}  {# Herencia #}
+{% block title %}Configuracion{% endblock %}
+  
+{% block cuerpo %}
+  <body>
+       <div id="main-area">
+           <div id="main-content">        
+               <form action="{{ url_for('frm_inventarios_erp.frm_inventarios_erp_act', operacion=operacion) }}" method="POST" {{valida}}>
+                    <!-- <input type="hidden" name="_ip_csrf" value="187dae7f0d0a49064bbba3a9e2786f49"> -->
+                    <div id="headerbar">
+                        <h1 class="headerbar-title">Formulario de inventarios erp</h1>
+                        <div class="headerbar-item pull-right">
+                            <div class="btn-group btn-group-sm">
+                               <button id="btn-submit" name="btn_submit" class="btn btn-success ajax-loader" value="1">
+                                       <i class="fa fa-check"></i> {{operacion}}
+                               </button>
+                               <button id="btn-cancel" type="button" name="btn_cancel" class="btn btn-danger" onclick="salir()" value="1">
+                                       <i class="fa fa-times"></i> Cancelar
+                               </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content">        
+                        <!-- <input class="hidden" name="is_update" type="hidden" value="1"> -->
+                       <div class="row">
+                           <div class="col-xs-12 col-sm-6">
+                               <div class="panel panel-default">
+                                  <div class="panel-heading form-inline clearfix">
+                                      Información inventarios erp
+                                  </div>
+                                  <div class="panel-body">
+                                       <div Class='form-group'>
+                                          <label for='id_empresa'>Id empresa</label>
+                                          <input type='number' step='1' min=0 max='' class=form-control id=id_empresa name=id_empresa size=10 maxlenght=0 value='{{reg.id_empresa}}' required readonly>
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='id_bodega'>Id bodega</label>
+                                          <input type='text' class=form-control id=id_bodega name=id_bodega size=15 maxlenght=5 value='{{reg.id_bodega}}' {{bloquea_claves}} required>
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='id_producto'>Id producto</label>
+                                          <input type='text' class=form-control id=id_producto name=id_producto size=30 maxlenght=20 value='{{reg.id_producto}}' {{bloquea_claves}} required>
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='saldo'>Saldo</label>
+                                          <input type='number' step='0.01' min='0' max='9999999999999.99' class=form-control id=saldo name=saldo size=25 maxlenght=15 value='{{reg.saldo}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='valor'>Valor</label>
+                                          <input type='number' step='0.01' min='0' max='9999999999999.99' class=form-control id=valor name=valor size=25 maxlenght=15 value='{{reg.valor}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='saldo_mes'>Saldo mes</label>
+                                          <input type='number' step='0.01' min='0' max='9999999999999.99' class=form-control id=saldo_mes name=saldo_mes size=25 maxlenght=15 value='{{reg.saldo_mes}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='valor_mes'>Valor mes</label>
+                                          <input type='number' step='0.01' min='0' max='9999999999999.99' class=form-control id=valor_mes name=valor_mes size=25 maxlenght=15 value='{{reg.valor_mes}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='saldo_ano'>Saldo ano</label>
+                                          <input type='number' step='0.01' min='0' max='9999999999999.99' class=form-control id=saldo_ano name=saldo_ano size=25 maxlenght=15 value='{{reg.saldo_ano}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='valor_ano'>Valor ano</label>
+                                          <input type='number' step='0.01' min='0' max='9999999999999.99' class=form-control id=valor_ano name=valor_ano size=25 maxlenght=15 value='{{reg.valor_ano}}' {{bloquea_campos}}  required >
+                                           </div>
+                                           </div>
+                                  </div>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+               </form>
+           </div>
+       </div>
+     <script>
+         function salir(){
+             if (confirm("Esta seguro de abonadar esta pagina?")){
+                 location.href = "{{url_for('frm_inventarios_erp.frm_inventarios_erp_primero')}}"
+             } else {
+                 return;
+             }
+         }
+     </script>
+  </body>
+{% endblock %}
+</html>

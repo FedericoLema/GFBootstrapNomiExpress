@@ -1,0 +1,10 @@
+﻿Codigo,Tipo de Deduccion por Ley,Porcentaje
+1,Salud Tarifa (12.5%) Trabajador,4
+2,Salud Tarifa (12.5%) Empleador,8.5
+3,Salud Sal<10SMLV Tarifa (4%) Trabajador,4
+4,Salud Sal<10SMLV Tarifa (4%) Empleador,0
+5,Pension Tarifa (16%) Trabajador,4
+6,Pension Tarifa (16%) Empleador,12
+7,Pension Alto Riesgo Tarifa (26%) Trabajador,4
+8,Pension Alto Riesgo Tarifa (26%) Empleador,22
+9,Fondo de Solidaridad Empleado,1

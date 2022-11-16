@@ -1,0 +1,8 @@
+﻿Codigo,Tipo de Hora Extra o Recargo,Porcentaje
+1,Hora Extra Diurna,25
+2,Hora Extra Nocturna,75
+3,Hora Recargo Nocturno,35
+4,Hora Extra Diurna Dominical y Festivos,100
+5,Hora Recargo Diurno Dominical y Festivos,75
+6,Hora Extra Nocturna Dominical y Festivos,150
+7,Hora Recargo Nocturno Dominical y Festivos,110

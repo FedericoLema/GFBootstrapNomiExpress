@@ -1,0 +1,9 @@
+﻿enc_liquidaciones,1,id_empresa,PRI,int,0,,,,,,10,0,,Id empresa,Id empresa,0,0
+enc_liquidaciones,2,tipo_documento,PRI,varchar,5,,tipos_documentos,id,descripcion,,,,,Tipo documento,Tipo documento,0,0
+enc_liquidaciones,3,id,PRI,decimal,9,,,,,"#,###,###,###,##0",8,0,,Id,Id,0,0
+enc_liquidaciones,4,id_nomina,,varchar,8,,nominas,id,nombre,,,,,Nomina,Nomina,0,0
+enc_liquidaciones,5,ano,,decimal,5,,,,,###0,4,0,,Año,Año,0,0
+enc_liquidaciones,6,periodo,,decimal,3,,,,,#0,2,0,,Periodo,Periodo,0,0
+enc_liquidaciones,7,fecha,,date,8,,,,,yyyy-MM-dd,,,,Fecha,Fecha,0,0
+enc_liquidaciones,8,estado,,varchar,2,,,,,,,,,Estado,Estado,0,0
+enc_liquidaciones,9,Observaciones,,varchar,50,,,,,,,,,Observaciones,Observaciones,0,0

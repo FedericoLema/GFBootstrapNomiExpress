@@ -1,0 +1,21 @@
+    <Compile Include="FRMxxx1.Designer.vb">
+      <DependentUpon>FRMxxx1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRMxxx1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMxxx2.Designer.vb">
+      <DependentUpon>FRMxxx2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRMxxx2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+
+
+
+    <EmbeddedResource Include="FRMxxx1.resx">
+      <DependentUpon>FRMxxx1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMxxx2.resx">
+      <DependentUpon>FRMxxx2.vb</DependentUpon>
+    </EmbeddedResource>

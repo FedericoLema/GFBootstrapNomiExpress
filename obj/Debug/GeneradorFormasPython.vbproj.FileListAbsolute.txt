@@ -1,0 +1,16 @@
+C:\Trabajo\Proyectos\VisualEstudio2019\GeneradorFormasPython\bin\Debug\GeneradorFormas.exe.config
+C:\Trabajo\Proyectos\VisualEstudio2019\GeneradorFormasPython\bin\Debug\GeneradorFormas.exe
+C:\Trabajo\Proyectos\VisualEstudio2019\GeneradorFormasPython\bin\Debug\GeneradorFormas.pdb
+C:\Trabajo\Proyectos\VisualEstudio2019\GeneradorFormasPython\bin\Debug\GeneradorFormas.xml
+C:\Trabajo\Proyectos\VisualEstudio2019\GeneradorFormasPython\bin\Debug\MySql.Data.dll
+C:\Trabajo\Proyectos\VisualEstudio2019\GeneradorFormasPython\bin\Debug\BouncyCastle.Crypto.dll
+C:\Trabajo\Proyectos\VisualEstudio2019\GeneradorFormasPython\bin\Debug\Renci.SshNet.dll
+C:\Trabajo\Proyectos\VisualEstudio2019\GeneradorFormasPython\obj\Debug\GeneradorFormasPython.vbprojAssemblyReference.cache
+C:\Trabajo\Proyectos\VisualEstudio2019\GeneradorFormasPython\obj\Debug\GeneradorFormas.FRMgenerador.resources
+C:\Trabajo\Proyectos\VisualEstudio2019\GeneradorFormasPython\obj\Debug\GeneradorFormas.Resources.resources
+C:\Trabajo\Proyectos\VisualEstudio2019\GeneradorFormasPython\obj\Debug\GeneradorFormasPython.vbproj.GenerateResource.cache
+C:\Trabajo\Proyectos\VisualEstudio2019\GeneradorFormasPython\obj\Debug\GeneradorFormasPython.vbproj.CoreCompileInputs.cache
+C:\Trabajo\Proyectos\VisualEstudio2019\GeneradorFormasPython\obj\Debug\GeneradorFormasPython.vbproj.CopyComplete
+C:\Trabajo\Proyectos\VisualEstudio2019\GeneradorFormasPython\obj\Debug\GeneradorFormas.exe
+C:\Trabajo\Proyectos\VisualEstudio2019\GeneradorFormasPython\obj\Debug\GeneradorFormas.xml
+C:\Trabajo\Proyectos\VisualEstudio2019\GeneradorFormasPython\obj\Debug\GeneradorFormas.pdb

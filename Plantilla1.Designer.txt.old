@@ -1,0 +1,125 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class @NOMBREFORMA
+    Inherits System.Windows.Forms.Form
+
+    'Form reemplaza a Dispose para limpiar la lista de componentes.
+    <System.Diagnostics.DebuggerNonUserCode()>
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Requerido por el Diseñador de Windows Forms
+    Private components As System.ComponentModel.IContainer
+
+    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
+    'Se puede modificar usando el Diseñador de Windows Forms.  
+    'No lo modifique con el editor de código.
+    <System.Diagnostics.DebuggerStepThrough()>
+    Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        'Me.Erp_liteDataSet1 = New PruebaNomina.erp_liteDataSet1()
+        'Me.EmpresasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        'Me.EmpresasTableAdapter = New PruebaNomina.erp_liteDataSet1TableAdapters.empresasTableAdapter()
+        'Me.TableAdapterManager = New PruebaNomina.erp_liteDataSet1TableAdapters.TableAdapterManager()
+        Me.DGV@NOMBRETABLA = New System.Windows.Forms.DataGridView()
+        Me.BTNmodificar = New System.Windows.Forms.Button()
+        Me.BTNborrar = New System.Windows.Forms.Button()
+        Me.BTNcrear = New System.Windows.Forms.Button()
+        'CType(Me.Erp_liteDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        'CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGV@NOMBRETABLA, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'Erp_liteDataSet1
+        '
+        'Me.Erp_liteDataSet1.DataSetName = "erp_liteDataSet1"
+        'Me.Erp_liteDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'EmpresasBindingSource
+        '
+        'Me.EmpresasBindingSource.DataMember = "empresas"
+        'Me.EmpresasBindingSource.DataSource = Me.Erp_liteDataSet1
+        '
+        'EmpresasTableAdapter
+        '
+        'Me.EmpresasTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        'Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        'Me.TableAdapterManager.empresasTableAdapter = Me.EmpresasTableAdapter
+        'Me.TableAdapterManager.UpdateOrder = PruebaNomina.erp_liteDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        'Me.TableAdapterManager.usuariosTableAdapter = Nothing
+        '
+        'DGV@NOMBRETABLA
+        '
+        Me.DGV@NOMBRETABLA.AllowUserToAddRows = False
+        Me.DGV@NOMBRETABLA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV@NOMBRETABLA.Location = New System.Drawing.Point(12, 12)
+        Me.DGV@NOMBRETABLA.MultiSelect = False
+        Me.DGV@NOMBRETABLA.Name = "DGV@NOMBRETABLA"
+        Me.DGV@NOMBRETABLA.ReadOnly = True
+        Me.DGV@NOMBRETABLA.Size = New System.Drawing.Size(776, 267)
+        Me.DGV@NOMBRETABLA.TabIndex = 0
+        '
+        'BTNmodificar
+        '
+        Me.BTNmodificar.Image = Global.PruebaNomina.My.Resources.Resources.Modificar
+        Me.BTNmodificar.Location = New System.Drawing.Point(48, 285)
+        Me.BTNmodificar.Name = "BTNmodificar"
+        Me.BTNmodificar.Size = New System.Drawing.Size(30, 28)
+        Me.BTNmodificar.TabIndex = 3
+        Me.BTNmodificar.UseVisualStyleBackColor = True
+        '
+        'BTNborrar
+        '
+        Me.BTNborrar.Image = Global.PruebaNomina.My.Resources.Resources.Borrar
+        Me.BTNborrar.Location = New System.Drawing.Point(84, 285)
+        Me.BTNborrar.Name = "BTNborrar"
+        Me.BTNborrar.Size = New System.Drawing.Size(30, 28)
+        Me.BTNborrar.TabIndex = 2
+        Me.BTNborrar.UseVisualStyleBackColor = True
+        '
+        'BTNcrear
+        '
+        Me.BTNcrear.Image = Global.PruebaNomina.My.Resources.Resources.Nuevo
+        Me.BTNcrear.Location = New System.Drawing.Point(12, 285)
+        Me.BTNcrear.Name = "BTNcrear"
+        Me.BTNcrear.Size = New System.Drawing.Size(30, 28)
+        Me.BTNcrear.TabIndex = 1
+        Me.BTNcrear.UseVisualStyleBackColor = True
+        '
+        'FRM@NOMBREFORMA
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(800, 321)
+        Me.Controls.Add(Me.BTNmodificar)
+        Me.Controls.Add(Me.BTNborrar)
+        Me.Controls.Add(Me.BTNcrear)
+        Me.Controls.Add(Me.DGV@NOMBRETABLA)
+        Me.Name = "@NOMBREFORMA"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "@TITULOFORMA"
+        'CType(Me.Erp_liteDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        'CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGV@NOMBRETABLA, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
+    End Sub
+
+    'Friend WithEvents Erp_liteDataSet1 As erp_liteDataSet1
+    'Friend WithEvents EmpresasBindingSource As BindingSource
+    'Friend WithEvents EmpresasTableAdapter As erp_liteDataSet1TableAdapters.empresasTableAdapter
+    'Friend WithEvents TableAdapterManager As erp_liteDataSet1TableAdapters.TableAdapterManager
+    Friend WithEvents DGV@NOMBRETABLA As DataGridView
+    Friend WithEvents BTNcrear As Button
+    Friend WithEvents BTNborrar As Button
+    Friend WithEvents BTNmodificar As Button
+End Class

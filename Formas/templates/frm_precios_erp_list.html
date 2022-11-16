@@ -1,0 +1,87 @@
+{% extends 'base.html'%}  {# Herencia #}
+{% block title %}frm_precios_erp_list{% endblock %}
+  </head>
+<body>
+  {% block cuerpo %}
+    <div id="main-area">
+         <div id="main-content">
+              <div id="headerbar">
+                   <form role="search" action="{{url_for('frm_precios_erp.frm_precios_erp_list')}}" method="POST">
+                        <h1 class="headerbar-title">Precios erp</h1>
+                        <div class="headerbar-item pull-right">
+                             <button type="button" class="btn btn-default btn-sm submenu-toggle hidden-lg" data-toggle="collapse" data-target="#ip-submenu-collapse">
+                                     <i class="fa fa-bars"></i> Submenú </button>
+                             <a class="btn btn-primary btn-sm" href="{{url_for('frm_precios_erp.frm_precios_erp_show', ope='C' , id_empresa= '0', id_lista_precios= '0', id_producto= '0')}}">
+                                     <i class="fa fa-plus"></i> Nuevo </a>
+                        </div>
+                        <div class="headerbar-item pull-right visible-lg">
+                             <div class="model-pager btn-group btn-group-sm">
+                                  <input class="btn btn-default " name="btn_filtro" type="submit" value="primero">
+                                  <input class="btn btn-default " name="btn_filtro" type="submit" value="anterior">
+                                  <input class="btn btn-default " name="btn_filtro" type="submit" value="siguiente">
+                                  <input class="btn btn-default " name="btn_filtro" type="submit" value="ultimo">                                  
+                             </div>    
+                         </div>
+                         <div class="headerbar-item pull-right">                       
+                              <div class="form-group">
+                                   <input id="filter" name="filter" type="text" class="search-query form-control input-sm" placeholder="Filtro de clientes" value="{{fil}}">
+                              </div>                        
+                         </div>
+                   </form >
+              </div>
+              <div class="row">
+                   <div class="col-md-12">
+                        <div class="card">
+                             <div class="card-body">
+                                  <div id="Filtro">
+                                  </div>
+                                  <form name="frm">
+                                        <div class="table-responsive">
+                                             <table class="table table-hover mb-0">
+                                                    <thead class="text-center">
+                                                           <th>Id empresa</th>
+                                                           <th>Id lista precios</th>
+                                                           <th>Id producto</th>
+                                                           <th>Precio</th>
+                                                    </thead>
+                                                    <tbody>
+                                                      {% for order in orders %}
+                                                      <tr>
+                                                          <td align='left'>{{order.id_empresa}}</td>
+                                                          <td align='left'>{{order.id_lista_precios}}</td>
+                                                          <td align='left'>{{order.id_producto}}</td>
+                                                          <td align='left'>{{order.precio}}</td>
+                                                          <td>
+                                                              <div class="options btn-group">
+                                                                   <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                                                                      <i class="fa fa-cog"></i> Opciones 
+                                                                   </a>
+                                                                   <ul class="dropdown-menu">
+                                                                       <li>
+                                                                           <a href="{{url_for('frm_precios_erp.frm_precios_erp_show', ope='M' , id_empresa= order['id_empresa'], id_lista_precios= order['id_lista_precios'], id_producto= order['id_producto'])}}">
+                                                                               <i class="fa fa-edit fa-margin"></i> Editar   
+                                                                           </a>
+                                                                       </li>
+                                                                       <li>
+                                                                           <a href="{{url_for('frm_precios_erp.frm_precios_erp_show', ope='E' , id_empresa= order['id_empresa'], id_lista_precios= order['id_lista_precios'], id_producto= order['id_producto'])}}">
+                                                                              <i class="fa fa-trash-alt fa-margin"></i> Borrar 
+                                                                           </a>
+                                                                       </li>
+                                                                   </ul>
+                                                              </div>
+                                                          </td> 
+                                                      </tr>
+                                                      {% endfor %}
+                                                    </tbody>
+                                             </table>
+                                        </div>
+                                  </form>
+                             </div>
+                        </div>
+                   </div>
+              </div>
+         </div>
+    </div>
+  {% endblock %}
+</body>
+</html>

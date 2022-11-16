@@ -1,0 +1,58 @@
+﻿Public Class @NOMBREFORMA
+    'Private Sub @NOMBRETABLABindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
+        ' Me.Validate()
+        ' Me.@NOMBRETABLABindingSource.EndEdit()
+        'Me.TableAdapterManager.UpdateAll(Me.Erp_liteDataSet1)
+
+    'End Sub
+
+    Private Sub @NOMBREFORMA_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'Erp_liteDataSet1.@NOMBRETABLA' Puede moverla o quitarla según sea necesario.
+        'Me.@NOMBRETABLATableAdapter.Fill(Me.Erp_liteDataSet1.@NOMBRETABLA)
+        Carga_Registros()
+    End Sub
+    Private Sub Carga_Registros()
+        Dim Sql As String
+        Dim dt As DataTable
+
+        Sql = "SELECT * from @NOMBRETABLA"
+        dt = DBcmd(Sql)
+        DGV@NOMBRETABLA.DataSource = dt
+        For i = 0 To DGV@NOMBRETABLA.ColumnCount - 1
+            DGV@NOMBRETABLA.Columns(i).ReadOnly = True
+        Next
+
+        Try
+            If (dt.Rows.Count = 0) Then
+                MsgBox("No hay @NOMBRETABLA definidas")
+                BTNborrar.Enabled = False
+                Exit Sub
+            Else
+                BTNborrar.Enabled = True
+            End If
+        Catch ex As Exception
+            MsgBox("No hay @NOMBRETABLA definidas")
+            Exit Sub
+        End Try
+
+    End Sub
+    Private Sub BTNcrear_Click(sender As Object, e As EventArgs) Handles BTNcrear.Click
+        'Dim @NOMBREFORMA2 As New @NOMBREFORMA2()
+        PubPara_1_string = "I"
+        @NOMBREFORMA2.ShowDialog()
+        Carga_Registros()
+    End Sub
+
+    Private Sub BTNmodificar_Click(sender As Object, e As EventArgs) Handles BTNmodificar.Click
+        'MsgBox(DGV@NOMBRETABLA.CurrentRow.Cells("id").Value)
+        PubPara_1_string = "M" & DGV@NOMBRETABLA.CurrentRow.Cells("id").Value
+        @NOMBREFORMA2.ShowDialog()
+        Carga_Registros()
+    End Sub
+
+    Private Sub BTNborrar_Click(sender As Object, e As EventArgs) Handles BTNborrar.Click
+        PubPara_1_string = "B" & DGV@NOMBRETABLA.CurrentRow.Cells("id").Value
+        @NOMBREFORMA2.ShowDialog()
+        Carga_Registros()
+    End Sub
+End Class

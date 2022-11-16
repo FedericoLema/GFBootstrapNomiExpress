@@ -1,0 +1,124 @@
+{% extends 'base.html'%}  {# Herencia #}
+{% block title %}Configuracion{% endblock %}
+  
+{% block cuerpo %}
+  <body>
+       <div id="main-area">
+           <div id="main-content">        
+               <form action="{{ url_for('frm_tablas.frm_tablas_act', operacion=operacion) }}" method="POST" {{valida}}>
+                    <!-- <input type="hidden" name="_ip_csrf" value="187dae7f0d0a49064bbba3a9e2786f49"> -->
+                    <div id="headerbar">
+                        <h1 class="headerbar-title">Formulario de tablas</h1>
+                        <div class="headerbar-item pull-right">
+                            <div class="btn-group btn-group-sm">
+                               <button id="btn-submit" name="btn_submit" class="btn btn-success ajax-loader" value="1">
+                                       <i class="fa fa-check"></i> {{operacion}}
+                               </button>
+                               <button id="btn-cancel" type="button" name="btn_cancel" class="btn btn-danger" onclick="salir()" value="1">
+                                       <i class="fa fa-times"></i> Cancelar
+                               </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content">        
+                        <!-- <input class="hidden" name="is_update" type="hidden" value="1"> -->
+                       <div class="row">
+                           <div class="col-xs-12 col-sm-6">
+                               <div class="panel panel-default">
+                                  <div class="panel-heading form-inline clearfix">
+                                      Información tablas
+                                  </div>
+                                  <div class="panel-body">
+                                       <div Class='form-group'>
+                                          <label for='tabla'>Tabla</label>
+                                          <input type='text' class=form-control id=tabla name=tabla size=40 maxlenght=30 value='{{reg.tabla}}' {{bloquea_claves}} required>
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='orden'>Orden</label>
+                                          <input type='number' step='1' min=0 max='' class=form-control id=orden name=orden size=40 maxlenght=30 value='{{reg.orden}}' {{bloquea_claves}} required>
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='campo'>Campo</label>
+                                          <input type='text' class=form-control id=campo name=campo size=50 maxlenght=40 value='{{reg.campo}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='clave'>Clave</label>
+                                          <input type='text' class=form-control id=clave name=clave size=15 maxlenght=5 value='{{reg.clave}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='tipo'>Tipo</label>
+                                          <input type='text' class=form-control id=tipo name=tipo size=30 maxlenght=20 value='{{reg.tipo}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='tamano'>Tamano</label>
+                                          <input type='number' step='1' min=0 max='' class=form-control id=tamano name=tamano size=30 maxlenght=20 value='{{reg.tamano}}' {{bloquea_campos}}  required >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='valida'>Valida</label>
+                                          <input type='text' class=form-control id=valida name=valida size=40 maxlenght=30 value='{{reg.valida}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='tabla_combo'>Tabla combo</label>
+                                          <input type='text' class=form-control id=tabla_combo name=tabla_combo size=50 maxlenght=40 value='{{reg.tabla_combo}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='clave_combo'>Clave combo</label>
+                                          <input type='text' class=form-control id=clave_combo name=clave_combo size=30 maxlenght=20 value='{{reg.clave_combo}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='muestra_combo'>Muestra combo</label>
+                                          <input type='text' class=form-control id=muestra_combo name=muestra_combo size=30 maxlenght=20 value='{{reg.muestra_combo}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='formato'>Formato</label>
+                                          <input type='text' class=form-control id=formato name=formato size=30 maxlenght=20 value='{{reg.formato}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='enteros'>Enteros</label>
+                                          <input type='text' class=form-control id=enteros name=enteros size=14 maxlenght=4 value='{{reg.enteros}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='decimales'>Decimales</label>
+                                          <input type='text' class=form-control id=decimales name=decimales size=14 maxlenght=4 value='{{reg.decimales}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='muestra'>Muestra</label>
+                                          <input type='text' class=form-control id=muestra name=muestra size=12 maxlenght=2 value='{{reg.muestra}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='descripcion'>Descripcion</label>
+                                          <input type='text' class=form-control id=descripcion name=descripcion size=60 maxlenght=50 value='{{reg.descripcion}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='label'>Label</label>
+                                          <input type='text' class=form-control id=label name=label size=40 maxlenght=30 value='{{reg.label}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='minimo'>Minimo</label>
+                                          <input type='text' class=form-control id=minimo name=minimo size=30 maxlenght=20 value='{{reg.minimo}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='maximo'>Maximo</label>
+                                          <input type='text' class=form-control id=maximo name=maximo size=30 maxlenght=20 value='{{reg.maximo}}' {{bloquea_campos}} >
+                                           </div>
+                                           </div>
+                                  </div>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+               </form>
+           </div>
+       </div>
+     <script>
+         function salir(){
+             if (confirm("Esta seguro de abonadar esta pagina?")){
+                 location.href = "{{url_for('frm_tablas.frm_tablas_primero')}}"
+             } else {
+                 return;
+             }
+         }
+     </script>
+  </body>
+{% endblock %}
+</html>

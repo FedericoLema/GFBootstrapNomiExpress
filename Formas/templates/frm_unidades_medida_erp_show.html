@@ -1,0 +1,68 @@
+{% extends 'base.html'%}  {# Herencia #}
+{% block title %}Configuracion{% endblock %}
+  
+{% block cuerpo %}
+  <body>
+       <div id="main-area">
+           <div id="main-content">        
+               <form action="{{ url_for('frm_unidades_medida_erp.frm_unidades_medida_erp_act', operacion=operacion) }}" method="POST" {{valida}}>
+                    <!-- <input type="hidden" name="_ip_csrf" value="187dae7f0d0a49064bbba3a9e2786f49"> -->
+                    <div id="headerbar">
+                        <h1 class="headerbar-title">Formulario de unidades medida erp</h1>
+                        <div class="headerbar-item pull-right">
+                            <div class="btn-group btn-group-sm">
+                               <button id="btn-submit" name="btn_submit" class="btn btn-success ajax-loader" value="1">
+                                       <i class="fa fa-check"></i> {{operacion}}
+                               </button>
+                               <button id="btn-cancel" type="button" name="btn_cancel" class="btn btn-danger" onclick="salir()" value="1">
+                                       <i class="fa fa-times"></i> Cancelar
+                               </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content">        
+                        <!-- <input class="hidden" name="is_update" type="hidden" value="1"> -->
+                       <div class="row">
+                           <div class="col-xs-12 col-sm-6">
+                               <div class="panel panel-default">
+                                  <div class="panel-heading form-inline clearfix">
+                                      Información unidades medida erp
+                                  </div>
+                                  <div class="panel-body">
+                                       <div Class='form-group'>
+                                          <label for='id_empresa'>Id empresa</label>
+                                          <input type='number' step='1' min=0 max='' class=form-control id=id_empresa name=id_empresa size=10 maxlenght=0 value='{{reg.id_empresa}}' required readonly>
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='id'>Id</label>
+                                          <input type='text' class=form-control id=id name=id size=15 maxlenght=5 value='{{reg.id}}' {{bloquea_claves}} required>
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='nombre'>Nombre</label>
+                                          <input type='text' class=form-control id=nombre name=nombre size=40 maxlenght=30 value='{{reg.nombre}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='factor'>Factor</label>
+                                          <input type='text' class=form-control id=factor name=factor size=55 maxlenght=45 value='{{reg.factor}}' {{bloquea_campos}} >
+                                           </div>
+                                           </div>
+                                  </div>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+               </form>
+           </div>
+       </div>
+     <script>
+         function salir(){
+             if (confirm("Esta seguro de abonadar esta pagina?")){
+                 location.href = "{{url_for('frm_unidades_medida_erp.frm_unidades_medida_erp_primero')}}"
+             } else {
+                 return;
+             }
+         }
+     </script>
+  </body>
+{% endblock %}
+</html>

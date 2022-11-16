@@ -1,0 +1,84 @@
+{% extends 'base.html'%}  {# Herencia #}
+{% block title %}Configuracion{% endblock %}
+  
+{% block cuerpo %}
+  <body>
+       <div id="main-area">
+           <div id="main-content">        
+               <form action="{{ url_for('frm_bodegas_erp.frm_bodegas_erp_act', operacion=operacion) }}" method="POST" {{valida}}>
+                    <!-- <input type="hidden" name="_ip_csrf" value="187dae7f0d0a49064bbba3a9e2786f49"> -->
+                    <div id="headerbar">
+                        <h1 class="headerbar-title">Formulario de bodegas erp</h1>
+                        <div class="headerbar-item pull-right">
+                            <div class="btn-group btn-group-sm">
+                               <button id="btn-submit" name="btn_submit" class="btn btn-success ajax-loader" value="1">
+                                       <i class="fa fa-check"></i> {{operacion}}
+                               </button>
+                               <button id="btn-cancel" type="button" name="btn_cancel" class="btn btn-danger" onclick="salir()" value="1">
+                                       <i class="fa fa-times"></i> Cancelar
+                               </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content">        
+                        <!-- <input class="hidden" name="is_update" type="hidden" value="1"> -->
+                       <div class="row">
+                           <div class="col-xs-12 col-sm-6">
+                               <div class="panel panel-default">
+                                  <div class="panel-heading form-inline clearfix">
+                                      Información bodegas erp
+                                  </div>
+                                  <div class="panel-body">
+                                       <div Class='form-group'>
+                                          <label for='id_empresa'>Id empresa</label>
+                                          <input type='number' step='1' min=0 max='' class=form-control id=id_empresa name=id_empresa size=10 maxlenght=0 value='{{reg.id_empresa}}' required readonly>
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='id_bodega'>Id bodega</label>
+                                          <input type='text' class=form-control id=id_bodega name=id_bodega size=20 maxlenght=10 value='{{reg.id_bodega}}' {{bloquea_claves}} required>
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='Nombre'>Nombre</label>
+                                          <input type='text' class=form-control id=Nombre name=Nombre size=55 maxlenght=45 value='{{reg.Nombre}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='direccion1'>Direccion1</label>
+                                          <input type='text' class=form-control id=direccion1 name=direccion1 size=40 maxlenght=30 value='{{reg.direccion1}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='direccion2'>Direccion2</label>
+                                          <input type='text' class=form-control id=direccion2 name=direccion2 size=40 maxlenght=30 value='{{reg.direccion2}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='direccion3'>Direccion3</label>
+                                          <input type='text' class=form-control id=direccion3 name=direccion3 size=40 maxlenght=30 value='{{reg.direccion3}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='id_nunicipio'>Id nunicipio</label>
+                                          <input type='text' class=form-control id=id_nunicipio name=id_nunicipio size=15 maxlenght=5 value='{{reg.id_nunicipio}}' {{bloquea_campos}} >
+                                           </div>
+                                       <div Class='form-group'>
+                                          <label for='telefono'>Telefono</label>
+                                          <input type='text' class=form-control id=telefono name=telefono size=25 maxlenght=15 value='{{reg.telefono}}' {{bloquea_campos}} >
+                                           </div>
+                                           </div>
+                                  </div>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+               </form>
+           </div>
+       </div>
+     <script>
+         function salir(){
+             if (confirm("Esta seguro de abonadar esta pagina?")){
+                 location.href = "{{url_for('frm_bodegas_erp.frm_bodegas_erp_primero')}}"
+             } else {
+                 return;
+             }
+         }
+     </script>
+  </body>
+{% endblock %}
+</html>

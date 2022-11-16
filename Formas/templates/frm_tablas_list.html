@@ -1,0 +1,115 @@
+{% extends 'base.html'%}  {# Herencia #}
+{% block title %}frm_tablas_list{% endblock %}
+  </head>
+<body>
+  {% block cuerpo %}
+    <div id="main-area">
+         <div id="main-content">
+              <div id="headerbar">
+                   <form role="search" action="{{url_for('frm_tablas.frm_tablas_list')}}" method="POST">
+                        <h1 class="headerbar-title">Tablas</h1>
+                        <div class="headerbar-item pull-right">
+                             <button type="button" class="btn btn-default btn-sm submenu-toggle hidden-lg" data-toggle="collapse" data-target="#ip-submenu-collapse">
+                                     <i class="fa fa-bars"></i> Submenú </button>
+                             <a class="btn btn-primary btn-sm" href="{{url_for('frm_tablas.frm_tablas_show', ope='C' , tabla= '0', orden= '0')}}">
+                                     <i class="fa fa-plus"></i> Nuevo </a>
+                        </div>
+                        <div class="headerbar-item pull-right visible-lg">
+                             <div class="model-pager btn-group btn-group-sm">
+                                  <input class="btn btn-default " name="btn_filtro" type="submit" value="primero">
+                                  <input class="btn btn-default " name="btn_filtro" type="submit" value="anterior">
+                                  <input class="btn btn-default " name="btn_filtro" type="submit" value="siguiente">
+                                  <input class="btn btn-default " name="btn_filtro" type="submit" value="ultimo">                                  
+                             </div>    
+                         </div>
+                         <div class="headerbar-item pull-right">                       
+                              <div class="form-group">
+                                   <input id="filter" name="filter" type="text" class="search-query form-control input-sm" placeholder="Filtro de clientes" value="{{fil}}">
+                              </div>                        
+                         </div>
+                   </form >
+              </div>
+              <div class="row">
+                   <div class="col-md-12">
+                        <div class="card">
+                             <div class="card-body">
+                                  <div id="Filtro">
+                                  </div>
+                                  <form name="frm">
+                                        <div class="table-responsive">
+                                             <table class="table table-hover mb-0">
+                                                    <thead class="text-center">
+                                                           <th>Tabla</th>
+                                                           <th>Orden</th>
+                                                           <th>Campo</th>
+                                                           <th>Clave</th>
+                                                           <th>Tipo</th>
+                                                           <th>Tamano</th>
+                                                           <th>Valida</th>
+                                                           <th>Tabla combo</th>
+                                                           <th>Clave combo</th>
+                                                           <th>Muestra combo</th>
+                                                           <th>Formato</th>
+                                                           <th>Enteros</th>
+                                                           <th>Decimales</th>
+                                                           <th>Muestra</th>
+                                                           <th>Descripcion</th>
+                                                           <th>Label</th>
+                                                           <th>Minimo</th>
+                                                           <th>Maximo</th>
+                                                    </thead>
+                                                    <tbody>
+                                                      {% for order in orders %}
+                                                      <tr>
+                                                          <td align='left'>{{order.tabla}}</td>
+                                                          <td align='left'>{{order.orden}}</td>
+                                                          <td align='left'>{{order.campo}}</td>
+                                                          <td align='left'>{{order.clave}}</td>
+                                                          <td align='left'>{{order.tipo}}</td>
+                                                          <td align='left'>{{order.tamano}}</td>
+                                                          <td align='left'>{{order.valida}}</td>
+                                                          <td align='left'>{{order.tabla_combo}}</td>
+                                                          <td align='left'>{{order.clave_combo}}</td>
+                                                          <td align='left'>{{order.muestra_combo}}</td>
+                                                          <td align='left'>{{order.formato}}</td>
+                                                          <td align='left'>{{order.enteros}}</td>
+                                                          <td align='left'>{{order.decimales}}</td>
+                                                          <td align='left'>{{order.muestra}}</td>
+                                                          <td align='left'>{{order.descripcion}}</td>
+                                                          <td align='left'>{{order.label}}</td>
+                                                          <td align='left'>{{order.minimo}}</td>
+                                                          <td align='left'>{{order.maximo}}</td>
+                                                          <td>
+                                                              <div class="options btn-group">
+                                                                   <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                                                                      <i class="fa fa-cog"></i> Opciones 
+                                                                   </a>
+                                                                   <ul class="dropdown-menu">
+                                                                       <li>
+                                                                           <a href="{{url_for('frm_tablas.frm_tablas_show', ope='M' , tabla= order['tabla'], orden= order['orden'])}}">
+                                                                               <i class="fa fa-edit fa-margin"></i> Editar   
+                                                                           </a>
+                                                                       </li>
+                                                                       <li>
+                                                                           <a href="{{url_for('frm_tablas.frm_tablas_show', ope='E' , tabla= order['tabla'], orden= order['orden'])}}">
+                                                                              <i class="fa fa-trash-alt fa-margin"></i> Borrar 
+                                                                           </a>
+                                                                       </li>
+                                                                   </ul>
+                                                              </div>
+                                                          </td> 
+                                                      </tr>
+                                                      {% endfor %}
+                                                    </tbody>
+                                             </table>
+                                        </div>
+                                  </form>
+                             </div>
+                        </div>
+                   </div>
+              </div>
+         </div>
+    </div>
+  {% endblock %}
+</body>
+</html>

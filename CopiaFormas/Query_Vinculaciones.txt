@@ -1,0 +1,17 @@
+select vinculaciones.id_empleado, empleados.nombre, vinculaciones.vinculacion, vinculaciones.id_nomina, nominas.nombre, vinculaciones.id_sucursal, sucursales.nombre, 
+       vinculaciones.id_divisiones, divisiones.nombre, vinculaciones.id_centro_costos, centros_costos.nombre, vinculaciones.id_turno, turnos.nombre, 
+       vinculaciones.id_fondo_pensiones, fn1.razon_social, vinculaciones.id_eps, fn2.razon_social, vinculaciones.id_arp, fn3.razon_social,
+       vinculaciones.id_caja_compensacion, fn4.razon_social, vinculaciones.id_fondo_cesantias, fn5.razon_social, vinculaciones.tipo_cuenta_bancaria,
+       vinculaciones.cuenta_bancaria, vinculaciones.banco, bancos.razon_social 
+       from vinculaciones inner join empleados on vinculaciones.id_empleado = empleados.cedula 
+                          inner join nominas on vinculaciones.id_nomina = nominas.id 
+                          inner join sucursales on vinculaciones.id_sucursal = sucursales.id 
+                          inner join divisiones on vinculaciones.id_divisiones = divisiones.id 
+                          inner join centros_costos on vinculaciones.id_centro_costos = centros_costos.id 
+                          inner join turnos on vinculaciones.id_turno = turnos.id 
+                          inner join fondos_nomina as fn1 on vinculaciones.id_fondo_pensiones = fn1.codigo 
+                          inner join fondos_nomina as fn2 on vinculaciones.id_eps = fn2.codigo 
+                          inner join fondos_nomina as fn3 on vinculaciones.id_arp = fn3.codigo 
+                          inner join fondos_nomina as fn4 on vinculaciones.id_caja_compensacion = fn4.codigo 
+                          inner join fondos_nomina as fn5 on vinculaciones.id_fondo_cesantias = fn5.codigo 
+                          inner join bancos on vinculaciones.banco = bancos.nit
